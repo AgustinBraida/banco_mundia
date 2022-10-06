@@ -46,7 +46,7 @@ if st.sidebar.download_button(label='Descargar', data=a, file_name='archivo.csv'
 # dataFinal.rename(columns={columnaSeleccionada:nuevoNombre}, inplace=True)
 
 
-info = ["Primeros 10 valores", "Descripción de los datos"]
+info = ["Primeros 10 valores", "Descripción de los datos", "Descripción por país"]
 seleccion = st.selectbox('Información del DataSets', info)
 
 
