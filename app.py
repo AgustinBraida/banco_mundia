@@ -65,7 +65,6 @@ elif seleccion == "Descripción por país":
     st.checkbox("Expandir contenedor", value=False, key="use_container_width")
     pais = dataFinal[dataFinal['country'] == seleccionPais]
     st.dataframe(pais, use_container_width=st.session_state.use_container_width)
-    st.title('ANALISIS GRAFICO')
     
 
 
