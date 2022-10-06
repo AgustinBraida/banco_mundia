@@ -66,13 +66,7 @@ elif seleccion == "Descripción por país":
     pais = dataFinal[dataFinal['country'] == seleccionPais]
     st.dataframe(pais, use_container_width=st.session_state.use_container_width)
     st.title('ANALISIS GRAFICO')
-    import matplotlib.pyplot as plt 
-    fig = plt.figure(figsize=(12,9))
-    x = pais['year'][::-1]
-    y = pais[codigo]
-    plt.plot(x, y)   
-    plt.tight_layout()
-    st.pyplot(fig)
+    
 
 
 
