@@ -1,3 +1,4 @@
 pandas
 streamlit
 pandas_datareader
+matplotlib.pyplot
