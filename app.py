@@ -53,7 +53,7 @@ seleccion = st.selectbox('Información del DataSets', info)
 
 if seleccion == "Primeros 10 valores":
     st.checkbox("Expandir contenedor", value=False, key="use_container_width")
-    df = dataFinal.head()
+    df = dataFinal.head(10)
     st.dataframe(df, use_container_width=st.session_state.use_container_width)
 elif seleccion == "Descripción de los datos":
     st.checkbox("Expandir contenedor", value=False, key="use_container_width")
@@ -65,6 +65,14 @@ elif seleccion == "Descripción por país":
     st.checkbox("Expandir contenedor", value=False, key="use_container_width")
     pais = dataFinal[dataFinal['country'] == seleccionPais]
     st.dataframe(pais, use_container_width=st.session_state.use_container_width)
+    st.title('ANALISIS GRAFICO')
+    import matplotlib.pyplot as plt 
+    fig = plt.figure(figsize=(12,9))
+    x = pais['year'][::-1]
+    y = pais[codigo]
+    plt.plot(x, y)   
+    plt.tight_layout()
+    st.pyplot(fig)
 
 
 
