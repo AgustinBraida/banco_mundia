@@ -28,6 +28,7 @@ nombreColumnas = list(dataFinal.columns)
 columnaSeleccionada = st.sidebar.selectbox('Nombre de las columnas', nombreColumnas)
 
 # Total de valores nulos
+st.sidebar.text('Valores Nulos')
 valoresNulos = dataFinal[columnaSeleccionada].isnull().sum()
 if valoresNulos > 0:
     st.sidebar.success(valoresNulos)
@@ -43,15 +44,7 @@ if st.sidebar.download_button(label='Descargar', data=a, file_name='archivo.csv'
 # Renombrar columna
 # nuevoNombre = st.sidebar.text_input('Renombrar columna:', placeholder='Nombre Nuevo')
 # dataFinal.rename(columns={columnaSeleccionada:nuevoNombre}, inplace=True)
-# 
 
-
-
-# with st.expander('Información del DataSets', ):
-    # primerosValores = st.text("Primeros 10 valores")
-    # st.write(dataFinal.head())
-    # st.text("Descripción de los datos")
-    # st.write(dataFinal.describe())
 
 info = ["Primeros 10 valores", "Descripción de los datos"]
 seleccion = st.selectbox('Información del DataSets', info)
