@@ -59,6 +59,12 @@ elif seleccion == "Descripción de los datos":
     st.checkbox("Expandir contenedor", value=False, key="use_container_width")
     des = dataFinal.describe()
     st.dataframe(des, use_container_width=st.session_state.use_container_width)
+elif seleccion == "Descripción por país":
+    paises = list(dataFinal['country'].unique())
+    seleccionPais = st.selectbox('Seleccionar País:', paises)
+    st.checkbox("Expandir contenedor", value=False, key="use_container_width")
+    pais = dataFinal[dataFinal['country'] == seleccionPais]
+    st.dataframe(pais, use_container_width=st.session_state.use_container_width)
 
 
 
